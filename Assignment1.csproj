@@ -42,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
+    <Compile Include="ComissionBasedPartTime.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="FixedBasedPartTime.cs" />
     <Compile Include="FullTime.cs" />
+    <Compile Include="Motorcycle.cs" />
     <Compile Include="PartTime.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

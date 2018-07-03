@@ -1,61 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollSystemJan2018 {
+namespace Assignment1 {
     class Program {
         static void Main(string[] args) {
-            List<Employee> aEmp = null;
-            aEmp = new List<Employee>();
+            List<Employee> aEmp = new List<Employee>();     // List of all Employees
+            int totalPR = 0;                                // Total payroll
 
-            FullTime ft1 = null;
-            ft1 = new FullTime();
+            #region Vehicles
+            Motorcycle Ninja = new Motorcycle(600, 6, "Ninja", "ZX-6R");
+            Motorcycle Harley = new Motorcycle(500, -1, "Harley Davidson", "Street 500");
+            Car Civic = new Car("Sedan", "Manual", "Honda", "Civic");
+            Car Ford = new Car("Pickup", "Automatic", "Ford", "F-150");
+            Car Tesla = new Car("Sedan", "Automatic", "Tesla", "Model X");
+            #endregion
 
-            ft1.Name = "Jayce";
-            ft1.Age = 20;
-            ft1.Salary = 20000;
-            ft1.Bonus = 2000;
+            #region Employees
+            ComissionBasedPartTime e1 = new ComissionBasedPartTime(10, "Cellphone", "John", 21, Ford, 10, 30);
+            aEmp.Add(e1);
+            ComissionBasedPartTime e2 = new ComissionBasedPartTime(15, "Real Estate", "Smith", 37, null, 35, 60);
+            aEmp.Add(e2);
+            FixedBasedPartTime e3 = new FixedBasedPartTime(40, "Marketing", "Cindy", 39, Civic, 10, 40);
+            aEmp.Add(e3);
+            FixedBasedPartTime e4 = new FixedBasedPartTime(80, "Management", "Carl", 55, Tesla, 20, 100);
+            aEmp.Add(e4);
+            FullTime e5 = new FullTime("Matthew", 18, Ninja, 40000, 5000);
+            aEmp.Add(e5);
+            FullTime e6 = new FullTime("Bob", 48, Harley, 60000, 5000);
+            aEmp.Add(e6);
+            #endregion
 
-            Vehicle v1 = new Vehicle("Honda", "Civic");
-
-            ft1.v = v1;
-
-            // add to array of Employees
-            aEmp.Add(ft1);
-
-            FullTime ft2 = null;
-            ft2 = new FullTime("upma", 55, 90000, 10000);
-
-            Vehicle v2 = new Vehicle("Porsche", "Carrera");
-            ft2.v = v2;
-
-            aEmp.Add(ft2);
-
-            PartTime pt1 = null;
-            pt1 = new PartTime("duncan", 55, 2 ,1500);
-
-            // Vehicle v3 = new Vehicle("Pontiac", "Sunfire");
-            pt1.v = null;
-            // pt1.v = v3;
-
-            aEmp.Add(pt1);
-
-            int totalPR = 0;
-            int currentPay = 0;
-
+            // Prints all Employee details and calculates total payroll
             for (int counter=0; counter < aEmp.Count ; counter = counter + 1 ) {
-                currentPay = aEmp[counter].calcEarnings();
-                totalPR = totalPR + currentPay;
-
-                aEmp[counter].printData();
-
-                Console.WriteLine("You were born in " + aEmp[counter].calcBirthYear());
-                Console.WriteLine("You make: " + currentPay);
-                Console.WriteLine("-------------------------");
+                totalPR += aEmp[counter].calcEarnings();
+                Console.WriteLine(aEmp[counter].printData());
+                Console.WriteLine("==========================================");
             }
-            Console.WriteLine("Total Payroll: " + totalPR);
+            Console.WriteLine(String.Format("{0, -20} {1, 19}$", "Total Payroll:", totalPR));
         }
     }
 }
