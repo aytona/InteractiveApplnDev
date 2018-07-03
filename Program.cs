@@ -31,7 +31,7 @@ namespace Assignment1 {
             #endregion
 
             // Prints all Employee details and calculates total payroll
-            for (int counter=0; counter < aEmp.Count ; counter = counter + 1 ) {
+            for (int counter=0; counter < aEmp.Count ; ++counter) {
                 totalPR += aEmp[counter].calcEarnings();
                 Console.WriteLine(aEmp[counter].printData());
                 Console.WriteLine("==========================================");
