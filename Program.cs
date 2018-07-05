@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// This namespace is for Interactive Application Development Assignment 1
+/// Group: Christopher Aytona, Timothy Catibog, Brian Mulhall
+/// </summary>
 namespace Assignment1 {
     class Program {
         static void Main(string[] args) {
