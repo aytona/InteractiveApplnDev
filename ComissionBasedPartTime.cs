@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Assignment1 {
     /// <summary>
@@ -70,7 +71,7 @@ namespace Assignment1 {
             String part = base.printData();
             String pcom = "Comission Based\n";
             String hours = String.Format("{0, -20} {1, 20}\n", "Hours Worked:", this.NHoursWorked);
-            String rate = String.Format("{0, -20} {1, 19}$\n", "Rate:", this.Rate);
+            String rate = String.Format("{0, -20} {1, 20}\n", "Rate:", this.Rate.ToString("C", CultureInfo.CurrentCulture));
             String comission = String.Format("{0, -20} {1, 19}%\n", "Comission:", this._comission);
             String product = String.Format("{0, -20} {1, 20}\n", "Product sold:", this._product);
             return part + pcom + hours + rate + comission + product;

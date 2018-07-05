@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Assignment1 {
     /// <summary>
@@ -69,8 +70,8 @@ namespace Assignment1 {
             String part = base.printData();
             String fix = "Fixed Based\n";
             String hours = String.Format("{0, -20} {1, 20}\n", "Hours Worked:", this.NHoursWorked);
-            String rate = String.Format("{0, -20} {1, 19}$\n", "Rate:", this.Rate);
-            String amount = String.Format("{0, -20} {1, 19}$\n", "Fixed amount:", this._fixedAmount);
+            String rate = String.Format("{0, -20} {1, 20}\n", "Rate:", this.Rate.ToString("C", CultureInfo.CurrentCulture));
+            String amount = String.Format("{0, -20} {1, 20}\n", "Fixed amount:", this._fixedAmount.ToString("C", CultureInfo.CurrentCulture));
             String dept = String.Format("{0, -20} {1, 20}\n", "Department:", this._department);
             return part + fix + hours + rate + amount + dept;
         }

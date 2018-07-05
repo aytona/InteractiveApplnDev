@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Assignment1 {
     /// <summary>
@@ -64,8 +65,8 @@ namespace Assignment1 {
         public override String printData() {
             String emp = base.printData();
             String full = "Employee is FullTime\n";
-            String salary = String.Format("{0, -20} {1, 19}$\n", "Salary:", this._salary);
-            String bonus = String.Format("{0, -20} {1, 19}$\n", "Bonus:", this._bonus);
+            String salary = String.Format("{0, -20} {1, 20}\n", "Salary:", this._salary.ToString("C", CultureInfo.CurrentCulture));
+            String bonus = String.Format("{0, -20} {1, 20}\n", "Bonus:", this._bonus.ToString("C", CultureInfo.CurrentCulture));
             return emp + full + salary + bonus;
         }
         #endregion

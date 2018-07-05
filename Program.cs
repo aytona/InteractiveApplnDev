@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 /// <summary>
 /// This namespace is for Interactive Application Development Assignment 1
@@ -40,7 +41,7 @@ namespace Assignment1 {
                 Console.WriteLine(aEmp[counter].printData());
                 Console.WriteLine("==========================================");
             }
-            Console.WriteLine(String.Format("{0, -20} {1, 19}$", "Total Payroll:", totalPR));
+            Console.WriteLine(String.Format("{0, -20} {1, 20}", "Total Payroll:", totalPR.ToString("C", CultureInfo.CurrentCulture)));
         }
     }
 }
