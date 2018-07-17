@@ -1,0 +1,15 @@
+﻿<Page
+    x:Class="Lab2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lab2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button x:Name="SampleButton" Content="Click Me!" Click="SampleButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,300,0,0" FontSize="20px"/>
+        <TextBlock x:Name="SampleText" Text="Sample Text" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30px"/>
+    </Grid>
+</Page>
